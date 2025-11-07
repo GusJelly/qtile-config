@@ -187,13 +187,13 @@ screens = [
                 ),
                 widget.CurrentLayout(),
                 widget.Prompt(),
-                # widget.WindowName(),
-                widget.TaskList(
-                    rounded=False,
-                    title_width_method="uniform",
-                    highlight_method="block",
-                    margin=0,
-                ),
+                widget.WindowName(),
+                # widget.TaskList(
+                #     rounded=False,
+                #     title_width_method="uniform",
+                #     highlight_method="block",
+                #     margin=0,
+                # ),
                 widget.Chord(
                     chords_colors={
                         "launch": ("#ff0000", "#ffffff"),
@@ -229,12 +229,13 @@ screens = [
                 ),
                 widget.CurrentLayout(),
                 widget.Prompt(),
-                widget.TaskList(
-                    rounded=False,
-                    title_width_method="uniform",
-                    highlight_method="block",
-                    margin=0,
-                ),
+                widget.WindowName(),
+                # widget.TaskList(
+                #     rounded=False,
+                #     title_width_method="uniform",
+                #     highlight_method="block",
+                #     margin=0,
+                # ),
                 # widget.WindowName(),
                 widget.Chord(
                     chords_colors={
