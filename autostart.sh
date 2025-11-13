@@ -1,8 +1,10 @@
 #!/bin/sh
 
+# environment variables
 export XCURSOR_THEME= "DMZ-Black" &
 export XCURSOR_SIZE= "24" &
 export BROWSER= "brave-browser" &
+
 xrandr --output HDMI-A-0 --primary --mode 1920x1080 --refresh 60.00 --left-of eDP &
 xsettingsd &
 xrdb -merge /home/gus/.Xresources &
@@ -12,7 +14,8 @@ gnome-keyring-daemon --start --components=ssh,secrets,pkcs11 &
 blueman-applet &
 nm-applet &
 flameshot &
-picom --vsync &
+/usr/bin/kdeconnect-indicator &
+picom &
 
 xinput set-prop 'Logitech USB Receiver' 'libinput Accel Profile Enabled' 0, 1 &
 xinput set-prop 'Logitech USB Receiver' 'libinput Accel Speed' 0 &

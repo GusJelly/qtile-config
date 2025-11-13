@@ -156,7 +156,7 @@ for i in groups:
 BLUE = "#46acab"
 layouts = [
     layout.MonadTall(
-        ratio=0.525,
+        ratio=0.5,
         border_focus=BLUE,
         border_width=2,
         single_border_width=2,
@@ -187,13 +187,13 @@ screens = [
                 ),
                 widget.CurrentLayout(),
                 widget.Prompt(),
-                widget.WindowName(),
-                # widget.TaskList(
-                #     rounded=False,
-                #     title_width_method="uniform",
-                #     highlight_method="block",
-                #     margin=0,
-                # ),
+                # widget.WindowName(),
+                widget.TaskList(
+                    rounded=False,
+                    title_width_method="uniform",
+                    highlight_method="block",
+                    margin=0,
+                ),
                 widget.Chord(
                     chords_colors={
                         "launch": ("#ff0000", "#ffffff"),
@@ -208,9 +208,14 @@ screens = [
                     fmt="{}",  # format how it appears
                 ),
                 widget.Sep(),
+                widget.PulseVolume(
+                    unmute_format="volume: {volume}%", limit_max_volume=True,
+                    mute_format="volume: Muted"
+                ),
+                widget.Sep(),
                 widget.Battery(charge_char="AC", discharge_char="BAT"),
                 widget.Sep(),
-                widget.Clock(format="%Y-%m-%d %a %I:%M %p", fmt="{}"),
+                widget.Clock(format="%Y-%m-%d %a %H:%M %p", fmt="{}"),
             ],
             24,
         ),
@@ -229,14 +234,13 @@ screens = [
                 ),
                 widget.CurrentLayout(),
                 widget.Prompt(),
-                widget.WindowName(),
-                # widget.TaskList(
-                #     rounded=False,
-                #     title_width_method="uniform",
-                #     highlight_method="block",
-                #     margin=0,
-                # ),
                 # widget.WindowName(),
+                widget.TaskList(
+                    rounded=False,
+                    title_width_method="uniform",
+                    highlight_method="block",
+                    margin=0,
+                ),
                 widget.Chord(
                     chords_colors={
                         "launch": ("#ff0000", "#ffffff"),
@@ -250,9 +254,11 @@ screens = [
                     fmt="{}",  # format how it appears
                 ),
                 widget.Sep(),
+                widget.PulseVolume(),
+                widget.Sep(),
                 widget.Battery(charge_char="AC", discharge_char="BAT"),
                 widget.Sep(),
-                widget.Clock(format="%Y-%m-%d %a %I:%M %p", fmt="{}"),
+                widget.Clock(format="%Y-%m-%d %a %H:%M %p", fmt="{}"),
             ],
             24,
         ),
